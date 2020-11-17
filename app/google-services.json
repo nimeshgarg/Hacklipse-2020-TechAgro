@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "25637536821",
+    "firebase_url": "https://techargo-2020.firebaseio.com",
+    "project_id": "techargo-2020",
+    "storage_bucket": "techargo-2020.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:25637536821:android:409c9ad6c9029ff9d19d7c",
+        "android_client_info": {
+          "package_name": "com.example.techargo"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "25637536821-3mqg04fntcsh817d56nk0buda9enkceg.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBiooI8xXlXJMthgmOYlm2byor4bGoR5Ac"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "25637536821-3mqg04fntcsh817d56nk0buda9enkceg.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

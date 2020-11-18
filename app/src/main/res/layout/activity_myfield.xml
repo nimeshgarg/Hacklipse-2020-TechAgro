@@ -53,51 +53,25 @@
         app:layout_constraintVertical_bias="0.564" />
 
     <Button
-        android:id="@+id/btn_current_crop_my_field"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Current Crop"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.121"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.412" />
-
-    <Button
-        android:id="@+id/btn_pest_history_my_field"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Pest history"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.121"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.732" />
-
-    <Button
         android:id="@+id/btn_add_crop_my_field"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Add a crop"
+        android:text="CHANGE CROP"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.86"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.412" />
+        app:layout_constraintVertical_bias="0.395" />
 
     <Button
         android:id="@+id/btn_add_pest_attack_my_field"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="ADD ATTACK"
+        android:text="ADD PEST ATTACK"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.863"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.732" />
+        app:layout_constraintVertical_bias="0.734" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,6 +1,5 @@
 package com.example.techargo;
 
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
@@ -11,9 +10,6 @@ import android.widget.EditText;
 import android.widget.ProgressBar;
 import android.widget.Toast;
 
-import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.android.gms.tasks.Task;
-import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 
 public class Login extends AppCompatActivity {
@@ -38,7 +34,7 @@ public class Login extends AppCompatActivity {
         bar = findViewById(R.id.bar_login);
         mAuth = FirebaseAuth.getInstance();
         if(mAuth.getCurrentUser()!=null){
-            startActivity(new Intent(getApplicationContext(),Main_page.class));
+            startActivity(new Intent(getApplicationContext(), MainPage.class));
         }
         btn_login.setOnClickListener(v -> {
             bar.setVisibility(View.VISIBLE);
@@ -52,7 +48,7 @@ public class Login extends AppCompatActivity {
                         bar.setVisibility(View.INVISIBLE);
                     }else{
                         Toast.makeText(Login.this, "Login Successful Completed", Toast.LENGTH_SHORT).show();
-                        startActivity(new Intent(getApplicationContext(),Main_page.class));
+                        startActivity(new Intent(getApplicationContext(), MainPage.class));
                     }
                 });
             }else{

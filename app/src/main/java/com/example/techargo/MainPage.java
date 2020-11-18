@@ -15,6 +15,7 @@ public class MainPage extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_mainpage);
+        //Handling the buttons
         Button btn_area = findViewById(R.id.btn_area);
         Button btn_field = findViewById(R.id.btn_field);
         Button btn_profile = findViewById(R.id.btn_profile);

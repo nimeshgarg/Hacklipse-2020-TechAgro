@@ -53,8 +53,8 @@ public class Register extends AppCompatActivity {
         });
         spn_state.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                if(1!=0){
+            public void onItemClick(AdapterView<?> parent, View view, int i, long id) {
+                if(i!=0){
                     // code for city does here
                     // collection("state").document(spn_state.getSelectedItem().toString()).collection("city")
                 }

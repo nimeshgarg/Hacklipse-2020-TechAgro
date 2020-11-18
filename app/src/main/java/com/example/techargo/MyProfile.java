@@ -12,9 +12,8 @@ public class MyProfile extends AppCompatActivity {
     private FirebaseAuth mAuth;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        
-        editText.setFocusable(false);
-        editText.setClickable(false);
+
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_myprofile);
         Button btn_logout = findViewById(R.id.btn_out);

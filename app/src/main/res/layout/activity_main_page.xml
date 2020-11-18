@@ -8,11 +8,11 @@
     tools:context=".Main_page">
 
     <Button
-        android:id="@+id/btn_myprofile"
+        android:id="@+id/btn_profile"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:background="#FF3B69"
-        android:text="My Profile"
+        android:text="@string/my_profile"
         android:textSize="30sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -22,10 +22,10 @@
         app:layout_constraintVertical_bias="0.2" />
 
     <Button
-        android:id="@+id/btn_myarea"
+        android:id="@+id/btn_area"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Info Of My Area"
+        android:text="@string/area_info"
         android:textSize="30sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -35,10 +35,10 @@
         app:layout_constraintVertical_bias="0.8" />
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/btn_field"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="My Field"
+        android:text="@string/my_field"
         android:textSize="30sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

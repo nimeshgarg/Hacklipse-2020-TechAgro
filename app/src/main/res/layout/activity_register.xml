@@ -8,7 +8,7 @@
     tools:context=".Register">
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/txt_name_register"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Name"
@@ -26,7 +26,7 @@
         tools:layout_editor_absoluteY="133dp" />
 
     <TextView
-        android:id="@+id/textView2"
+        android:id="@+id/txt_email_email"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Email"
@@ -43,18 +43,11 @@
         tools:layout_editor_absoluteX="173dp"
         tools:layout_editor_absoluteY="195dp" />
 
-    <TextView
-        android:id="@+id/textView3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="City"
-        tools:layout_editor_absoluteX="48dp"
-        tools:layout_editor_absoluteY="285dp" />
-
     <Spinner
-        android:id="@+id/spinner"
+        android:id="@+id/spn_state_register"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        tools:layout_editor_absoluteX="0dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         tools:layout_editor_absoluteY="280dp" />
 </androidx.constraintlayout.widget.ConstraintLayout>

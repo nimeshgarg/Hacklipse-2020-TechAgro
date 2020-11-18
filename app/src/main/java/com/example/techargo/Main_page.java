@@ -3,8 +3,10 @@ package com.example.techargo;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.widget.Button;
 
 public class Main_page extends AppCompatActivity {
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

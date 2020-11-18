@@ -8,12 +8,11 @@
     tools:context=".Login">
 
 
-
     <Button
         android:id="@+id/btn_login"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/submit"
+        android:text="@string/login"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -27,6 +26,8 @@
         android:hint="@string/password"
         android:importantForAutofill="no"
         android:inputType="textPassword"
+        android:textColor="#070707"
+        android:textColorHint="#0B0A0A"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -41,6 +42,8 @@
         android:hint="@string/email"
         android:importantForAutofill="no"
         android:inputType="textEmailAddress"
+        android:textColor="#070707"
+        android:textColorHint="#090909"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -54,6 +57,7 @@
         android:fontFamily="serif-monospace"
         android:text="@string/login"
         android:textAlignment="center"
+        android:textColor="#0B0A0A"
         android:textSize="36sp"
         android:textStyle="normal"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -78,6 +82,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/new_login"
+        android:textColor="#090909"
         app:layout_constraintBottom_toTopOf="@+id/btn_login"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

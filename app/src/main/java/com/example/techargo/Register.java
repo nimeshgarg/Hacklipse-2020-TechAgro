@@ -21,17 +21,17 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Register extends AppCompatActivity {
-    private Spinner spn_state;
-    private FirebaseAuth mAuth;
-    private FirebaseFirestore firebase;
-    private List<String> state_list;
-    private ArrayAdapter<String> adapter_state;
-    private String sel_state = "null", sel_city = "null", sel_area = "null";
+    /* private Spinner spn_state;
+     private FirebaseAuth mAuth;
+     private FirebaseFirestore firebase;
+     private List<String> state_list;
+     private ArrayAdapter<String> adapter_state;
+     private String sel_state = "null", sel_city = "null", sel_area = "null";*/
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
-        spn_state = findViewById(R.id.spn_state_register);
+        /*spn_state = findViewById(R.id.spn_state_register);
         firebase = FirebaseFirestore.getInstance();
         firebase.collection("state").get().addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
             @Override
@@ -60,5 +60,7 @@ public class Register extends AppCompatActivity {
                 }
             }
         });
+    }*/
     }
 }
+

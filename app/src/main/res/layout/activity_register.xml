@@ -11,7 +11,7 @@
         android:id="@+id/txt_name_register"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Name"
+        android:text="@string/name"
         android:textColor="@color/black"
         android:textSize="22sp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -26,8 +26,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:ems="10"
-        android:hint="NAME"
+        android:hint="@string/name"
 
+        android:importantForAutofill="no"
         android:inputType="textPersonName"
         android:textColor="@color/black"
         android:textColorHint="@color/black"
@@ -43,7 +44,7 @@
         android:id="@+id/txt_email_email"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Email"
+        android:text="@string/email"
         android:textColor="@color/black"
         android:textSize="22sp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -68,15 +69,16 @@
         app:layout_constraintHorizontal_bias="0.739"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.32" />
+        app:layout_constraintVertical_bias="0.32"
+        android:importantForAutofill="no" />
 
     <Spinner
-        android:id="@+id/spn_state_register"
-        android:layout_width="252dp"
-        android:layout_height="50dp"
+        android:id="@+id/spn_area_register"
+        android:layout_width="match_parent"
+        android:layout_height="30sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.741"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.642" />
@@ -86,7 +88,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="serif-monospace"
-        android:text="REGISTRATION"
+        android:text="@string/registration"
         android:textColor="@color/black"
         android:textSize="36sp"
         android:textStyle="normal|bold"
@@ -97,63 +99,21 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.075" />
 
-    <TextView
-        android:id="@+id/txt_present_crop_register"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Present Crop"
-        android:textColor="@color/black"
-        android:textSize="22sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.11"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.539" />
-
     <Spinner
-        android:id="@+id/spn_present_crop_register"
-        android:layout_width="242dp"
-        android:layout_height="52dp"
+        android:id="@+id/spn_city_register"
+        android:layout_width="match_parent"
+        android:layout_height="25sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.746"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.53" />
 
-    <TextView
-        android:id="@+id/txt_area_register"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Area"
-        android:textColor="@color/black"
-        android:textSize="22sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.096"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.436" />
-
-    <TextView
-        android:id="@+id/txt_city_register"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="City"
-        android:textColor="@color/white"
-        android:textSize="22sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.095"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.757" />
-
     <Spinner
-        android:id="@+id/spn_city_register"
-        android:layout_width="247dp"
-        android:layout_height="51dp"
+        android:id="@+id/spn_crop_register"
+        android:layout_width="match_parent"
+        android:layout_height="30sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.744"
@@ -161,25 +121,11 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.752" />
 
-    <TextView
-        android:id="@+id/txt_state_register"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="State"
-        android:textColor="@color/white"
-        android:textSize="22sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.097"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.65" />
-
     <Button
         android:id="@+id/btn_registration"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Register"
+        android:text="@string/registration"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -187,12 +133,13 @@
         app:layout_constraintVertical_bias="0.882" />
 
     <Spinner
-        android:id="@+id/spn_area_register"
-        android:layout_width="249dp"
-        android:layout_height="54dp"
+        android:id="@+id/spn_state_register"
+        android:layout_width="match_parent"
+        android:layout_height="25sp"
+        android:textAlignment="center"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.757"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.435" />

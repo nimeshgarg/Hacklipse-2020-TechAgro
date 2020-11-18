@@ -21,17 +21,17 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Register extends AppCompatActivity {
-    /* private Spinner spn_state;
+     private Spinner spn_state;
      private FirebaseAuth mAuth;
      private FirebaseFirestore firebase;
      private List<String> state_list;
      private ArrayAdapter<String> adapter_state;
-     private String sel_state = "null", sel_city = "null", sel_area = "null";*/
+     private String sel_state = "null", sel_city = "null", sel_area = "null";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
-        /*spn_state = findViewById(R.id.spn_state_register);
+        spn_state = findViewById(R.id.spn_state_register);
         firebase = FirebaseFirestore.getInstance();
         firebase.collection("state").get().addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
             @Override
@@ -51,16 +51,12 @@ public class Register extends AppCompatActivity {
                 spn_state.setAdapter(adapter_state);
             }
         });
-        spn_state.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> parent, View view, int i, long id) {
-                if(i!=0){
-                    // code for city does here
-                    // collection("state").document(spn_state.getSelectedItem().toString()).collection("city")
-                }
+        /*spn_state.setOnItemClickListener((parent, view, i, id) -> {
+            if(i!=0){
+                // code for city does here
+                // collection("state").document(spn_state.getSelectedItem().toString()).collection("city")
             }
-        });
-    }*/
+        });*/
     }
 }
 

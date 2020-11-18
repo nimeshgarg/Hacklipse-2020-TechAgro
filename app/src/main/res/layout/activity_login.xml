@@ -60,7 +60,7 @@
         android:id="@+id/textView_login"
         android:layout_width="167dp"
         android:layout_height="69dp"
-        android:fontFamily="monospace"
+        android:fontFamily="serif-monospace"
         android:text="LOGIN"
         android:textAlignment="center"
         android:textSize="36sp"
@@ -69,6 +69,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.522" />
+        app:layout_constraintVertical_bias="0.613" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

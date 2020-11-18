@@ -32,13 +32,11 @@ public class Login extends AppCompatActivity {
         btn_login = findViewById(R.id.btn_login);
         email = findViewById(R.id.email_login);
         pass = findViewById(R.id.pass_login);
-       bar = findViewById(R.id.bar_login);
-        TextView new_user = findViewById(R.id.new_login);
+        bar = findViewById(R.id.bar_login);
         mAuth = FirebaseAuth.getInstance();
         if(mAuth.getCurrentUser()!=null){
             startActivity(new Intent(getApplicationContext(), MainPage.class));
         }
-        new_user.setOnClickListener(v -> startActivity(new Intent(getApplicationContext(),Register.class)));
         btn_login.setOnClickListener(v -> {
             bar.setVisibility(View.VISIBLE);
             if(isEmailValid(email.getText())){
@@ -63,5 +61,8 @@ public class Login extends AppCompatActivity {
     }
     boolean isEmailValid(CharSequence email) {
         return android.util.Patterns.EMAIL_ADDRESS.matcher(email).matches();
+    }
+    public void register (View v){
+        startActivity(new Intent(getApplicationContext(),Register.class));
     }
 }

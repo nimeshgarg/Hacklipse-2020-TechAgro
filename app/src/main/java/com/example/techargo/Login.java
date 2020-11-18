@@ -48,7 +48,7 @@ public class Login extends AppCompatActivity {
                         btn_login.setEnabled(true);
                         bar.setVisibility(View.INVISIBLE);
                     }else{
-                        Toast.makeText(Login.this, "Login Successful Completed", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(Login.this, "Login Successful", Toast.LENGTH_SHORT).show();
                         startActivity(new Intent(getApplicationContext(), MainPage.class));
                     }
                 });

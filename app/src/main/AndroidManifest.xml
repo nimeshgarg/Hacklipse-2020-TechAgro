@@ -9,6 +9,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.TechArgo">
+        <activity android:name=".Register"></activity>
         <activity android:name=".MyArea" />
         <activity android:name=".MyField" />
         <activity android:name=".MyProfile" />

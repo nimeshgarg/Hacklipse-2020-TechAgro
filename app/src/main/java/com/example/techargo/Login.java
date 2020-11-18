@@ -8,6 +8,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ProgressBar;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.firebase.auth.FirebaseAuth;
@@ -32,10 +33,12 @@ public class Login extends AppCompatActivity {
         email = findViewById(R.id.email_login);
         pass = findViewById(R.id.pass_login);
         bar = findViewById(R.id.bar_login);
+        TextView new_user = findViewById(R.id.new_login);
         mAuth = FirebaseAuth.getInstance();
         if(mAuth.getCurrentUser()!=null){
             startActivity(new Intent(getApplicationContext(), MainPage.class));
         }
+        new_user.setOnClickListener(v -> startActivity(new Intent(getApplicationContext(),Register.class)));
         btn_login.setOnClickListener(v -> {
             bar.setVisibility(View.VISIBLE);
             if(isEmailValid(email.getText())){

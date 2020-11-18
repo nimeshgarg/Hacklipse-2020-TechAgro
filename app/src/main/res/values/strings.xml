@@ -7,4 +7,5 @@
     <string name="my_profile">My Profile</string>
     <string name="area_info">Info Of My Area</string>
     <string name="my_field">My Field</string>
+    <string name="new_login">New User? Register Now</string>
 </resources>

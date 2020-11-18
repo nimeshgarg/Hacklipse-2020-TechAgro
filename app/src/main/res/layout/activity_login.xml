@@ -52,10 +52,10 @@
 
     <TextView
         android:id="@+id/textView_login"
-        android:layout_width="167dp"
-        android:layout_height="69dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:fontFamily="serif-monospace"
-        android:text="@string/login"
+        android:text="@string/app_name"
         android:textAlignment="center"
         android:textColor="#0B0A0A"
         android:textSize="36sp"

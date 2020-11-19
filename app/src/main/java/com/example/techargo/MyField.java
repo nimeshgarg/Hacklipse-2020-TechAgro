@@ -1,18 +1,14 @@
 package com.example.techargo;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.android.gms.tasks.Task;
+import androidx.appcompat.app.AppCompatActivity;
+
 import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 
 import java.util.Objects;
@@ -22,6 +18,7 @@ public class MyField extends AppCompatActivity {
     private TextView txt_crop,txt_attack;
     private FirebaseAuth mAuth;
     private String state,city,area;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -30,10 +27,8 @@ public class MyField extends AppCompatActivity {
         txt_crop = findViewById(R.id.txt_field_crop);
         firebase = FirebaseFirestore.getInstance();
         mAuth = FirebaseAuth.getInstance();
-        Button btn_add_crop_my_field = findViewById(R.id.btn_field_crop);
-        Button btn_add_pest_attack_my_field = findViewById(R.id.btn_field_attack);
-        btn_add_crop_my_field.setOnClickListener(v -> startActivity(new Intent(getApplicationContext(),AddCrop.class)));
-        btn_add_pest_attack_my_field.setOnClickListener(v -> startActivity(new Intent(getApplicationContext(),PestAttack.class)));
+        Button btn_crop = findViewById(R.id.btn_field_crop);
+        Button btn_pest = findViewById(R.id.btn_field_attack);
         firebase.collection("user").document(Objects.requireNonNull(Objects.requireNonNull(mAuth.getCurrentUser()).getEmail())).get().addOnCompleteListener(task -> {
             if(!task.isSuccessful()){
                 Toast.makeText(MyField.this, "Try Later!!", Toast.LENGTH_SHORT).show();
@@ -47,20 +42,18 @@ public class MyField extends AppCompatActivity {
             firebase.collection("state").document(state)
                     .collection("city").document(city)
                     .collection("area").document(area)
-                    .get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
-                @Override
-                public void onComplete(@NonNull Task<DocumentSnapshot> task) {
-                    if(task.isSuccessful()) {
-                        txt_attack.setText(Objects.requireNonNull(Objects.requireNonNull(task.getResult()).get("attack")).toString());
-                    }else{
-                        Toast.makeText(MyField.this, "Try Later!!", Toast.LENGTH_SHORT).show();
-                        mAuth.signOut();
-                        finish();
-                    }
-                }
-            });
+                    .get().addOnCompleteListener(task1 -> {
+                        if(task1.isSuccessful()) {
+                            txt_attack.setText(Objects.requireNonNull(Objects.requireNonNull(task1.getResult()).get("attack")).toString());
+                        }else{
+                            Toast.makeText(MyField.this, "Try Later!!", Toast.LENGTH_SHORT).show();
+                            mAuth.signOut();
+                            finish();
+                        }
+                    });
         });
-
+        btn_crop.setOnClickListener(v -> startActivity(new Intent(getApplicationContext(),AddCrop.class)));
+        btn_pest.setOnClickListener(v -> startActivity(new Intent(getApplicationContext(),PestAttack.class)));
     }
 
     @Override

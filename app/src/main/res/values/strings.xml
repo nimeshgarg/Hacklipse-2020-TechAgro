@@ -17,4 +17,8 @@
     <string name="add_pest_attack">ADD PEST ATTACK</string>
     <string name="change_crop">CHANGE CROP</string>
     <string name="submit">submit</string>
+    <string name="info_of_my_area">INFO OF MY AREA</string>
+    <string name="price_of_my_crop">Price Of My Crop</string>
+    <string name="my_crop_in_my_area">My Crop In My Area</string>
+    <string name="check">CHECK</string>
 </resources>

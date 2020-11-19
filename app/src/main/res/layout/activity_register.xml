@@ -48,6 +48,7 @@
         android:id="@+id/spn_area_register"
         android:layout_width="match_parent"
         android:layout_height="30sp"
+        android:background="#CDDC39"
         android:textAlignment="center"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -75,6 +76,7 @@
         android:id="@+id/spn_city_register"
         android:layout_width="match_parent"
         android:layout_height="25sp"
+        android:background="#CDDC39"
         android:textAlignment="center"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -86,6 +88,7 @@
         android:id="@+id/spn_crop_register"
         android:layout_width="match_parent"
         android:layout_height="30sp"
+        android:background="#CDDC39"
         android:textAlignment="center"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -108,12 +111,13 @@
         android:id="@+id/spn_state_register"
         android:layout_width="match_parent"
         android:layout_height="25sp"
+        android:background="#CDDC39"
         android:textAlignment="center"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
 
+        app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.5" />
 
     <EditText

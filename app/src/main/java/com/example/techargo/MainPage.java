@@ -6,7 +6,10 @@ import android.widget.Button;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.google.firebase.auth.FirebaseAuth;
+
 public class MainPage extends AppCompatActivity {
+    private FirebaseAuth mAuth;
     @Override
     public void onBackPressed() {
         finishAffinity();
@@ -19,8 +22,14 @@ public class MainPage extends AppCompatActivity {
         Button btn_area = findViewById(R.id.btn_area);
         Button btn_field = findViewById(R.id.btn_field);
         Button btn_profile = findViewById(R.id.btn_profile);
+        Button btn_sign_out = findViewById(R.id.btn_sign_out);
+        mAuth = FirebaseAuth.getInstance();
         btn_profile.setOnClickListener(v -> startActivity(new Intent(getApplicationContext(),MyProfile.class)));
         btn_field.setOnClickListener(v -> startActivity(new Intent(getApplicationContext(),MyField.class)));
         btn_area.setOnClickListener(v -> startActivity(new Intent(getApplicationContext(), MyArea.class)));
+        btn_sign_out.setOnClickListener(v -> {
+            mAuth.signOut();
+            startActivity(new Intent(getApplicationContext(),Login.class));
+        });
     }
 }

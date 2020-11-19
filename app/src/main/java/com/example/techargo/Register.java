@@ -13,6 +13,7 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.google.firebase.analytics.FirebaseAnalytics;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.QueryDocumentSnapshot;
@@ -32,6 +33,7 @@ public class Register extends AppCompatActivity {
      private Button btn_submit;
      private EditText txt_email,txt_name,txt_pass;
      private ProgressBar bar;
+     private FirebaseAnalytics analytics;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -44,6 +46,7 @@ public class Register extends AppCompatActivity {
         txt_email = findViewById(R.id.txt_register_email);
         txt_name = findViewById(R.id.txt_register_name);
         txt_pass = findViewById(R.id.txt_register_password);
+        analytics = FirebaseAnalytics.getInstance(this);
         bar = findViewById(R.id.bar_register);
         firebase = FirebaseFirestore.getInstance();
         mAuth = FirebaseAuth.getInstance();
@@ -56,8 +59,8 @@ public class Register extends AppCompatActivity {
                 mAuth.signOut();
                 finish();
             }
-            for (QueryDocumentSnapshot documentSnapshot : task.getResult()){
-                state_list.add(documentSnapshot.get("name").toString());
+            for (QueryDocumentSnapshot documentSnapshot : Objects.requireNonNull(task.getResult())){
+                state_list.add(Objects.requireNonNull(documentSnapshot.get("name")).toString());
             }
             adapter_state.setDropDownViewResource(android.R.layout.simple_spinner_item);
             spn_state.setAdapter(adapter_state);
@@ -187,6 +190,9 @@ public class Register extends AppCompatActivity {
                                         mAuth.createUserWithEmailAndPassword(txt_email.getText().toString(),txt_pass.getText().toString())
                                                 .addOnCompleteListener(task -> {
                                                     if(task.isSuccessful()){
+                                                        analytics.setUserProperty("State",spn_state.getSelectedItem().toString());
+                                                        analytics.setUserProperty("City",spn_city.getSelectedItem().toString());
+                                                        analytics.setUserProperty("Area",spn_area.getSelectedItem().toString());
                                                         Map<String,String> data = new HashMap<>();
                                                         data.put("name",txt_name.getText().toString());
                                                         data.put("email",txt_email.getText().toString());

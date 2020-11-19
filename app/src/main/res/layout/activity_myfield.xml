@@ -8,11 +8,11 @@
     tools:context=".MyField">
 
     <TextView
-        android:id="@+id/txt_myfield"
+        android:id="@+id/label_field"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="serif-monospace"
-        android:text="MY FIELD"
+        android:text="@string/my_field"
         android:textColor="@color/black"
         android:textSize="36sp"
         android:textStyle="normal|bold"
@@ -23,11 +23,10 @@
         app:layout_constraintVertical_bias="0.096" />
 
     <TextView
-        android:id="@+id/txt_crop_my_field"
+        android:id="@+id/txt_field_crop"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:background="#CDDC39"
-        android:text="  MY CROP"
         android:textColor="@color/black"
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -38,11 +37,10 @@
         app:layout_constraintVertical_bias="0.249" />
 
     <TextView
-        android:id="@+id/txt_crop_my_field2"
+        android:id="@+id/txt_field_attack"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:background="#CDDC39"
-        android:text="  PEST ATTACK"
         android:textColor="@color/black"
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -53,10 +51,10 @@
         app:layout_constraintVertical_bias="0.564" />
 
     <Button
-        android:id="@+id/btn_add_crop_my_field"
+        android:id="@+id/btn_field_crop"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="CHANGE CROP"
+        android:text="@string/change_crop"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -64,10 +62,10 @@
         app:layout_constraintVertical_bias="0.395" />
 
     <Button
-        android:id="@+id/btn_add_pest_attack_my_field"
+        android:id="@+id/btn_field_attack"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="ADD PEST ATTACK"
+        android:text="@string/add_pest_attack"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

@@ -14,4 +14,6 @@
     <string name="state">State</string>
     <string name="city">City</string>
     <string name="crop">Crop</string>
+    <string name="add_pest_attack">ADD PEST ATTACK</string>
+    <string name="change_crop">CHANGE CROP</string>
 </resources>

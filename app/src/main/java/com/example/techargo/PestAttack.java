@@ -56,7 +56,7 @@ public class PestAttack extends AppCompatActivity {
                                 pest_list.add("None");
                                 adapter_pest = new ArrayAdapter<>(getApplicationContext(), android.R.layout.simple_spinner_item, pest_list);
                                 adapter_pest.setDropDownViewResource(android.R.layout.simple_spinner_item);
-                                spn_pest.setAdapter((SpinnerAdapter) spn_pest);
+                                spn_pest.setAdapter(adapter_pest);
                             }else{
                                 Toast.makeText(PestAttack.this, "Login Again!!", Toast.LENGTH_SHORT).show();
                                 mAuth.signOut();

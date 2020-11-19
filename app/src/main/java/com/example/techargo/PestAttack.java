@@ -27,6 +27,7 @@ public class PestAttack extends AppCompatActivity {
         private List<String> pest_list;
         private ArrayAdapter<String> adapter_pest;
         private ProgressBar bar;
+        private String state,city,area;
         @Override
         protected void onCreate(Bundle savedInstanceState) {
             super.onCreate(savedInstanceState);
@@ -43,9 +44,12 @@ public class PestAttack extends AppCompatActivity {
                             mAuth.signOut();
                             startActivity(new Intent(getApplicationContext(),Login.class));
                         }
-                        firebase.collection("state").document(Objects.requireNonNull(Objects.requireNonNull(task.getResult()).get("state")).toString())
-                                .collection("city").document(Objects.requireNonNull(task.getResult().get("city")).toString())
-                                .collection("area").document(Objects.requireNonNull(task.getResult().get("area")).toString())
+                        state = Objects.requireNonNull(Objects.requireNonNull(task.getResult()).get("state")).toString();
+                        city = Objects.requireNonNull(task.getResult().get("city")).toString();
+                        area = Objects.requireNonNull(task.getResult().get("area")).toString();
+                        firebase.collection("state").document(state)
+                                .collection("city").document(city)
+                                .collection("area").document(area)
                                 .collection("attack").get().addOnCompleteListener(task1 -> {
                             if(task1.isSuccessful()){
                                 pest_list = new ArrayList<>();
@@ -70,7 +74,9 @@ public class PestAttack extends AppCompatActivity {
                 btn_submit.setEnabled(false);
                 btn_submit.setVisibility(View.INVISIBLE);
                 if(!spn_pest.getSelectedItem().equals("Select Pest Attack")){
-                    firebase.collection("user").document(Objects.requireNonNull(Objects.requireNonNull(mAuth.getCurrentUser()).getEmail()))
+                    firebase.collection("state").document(state)
+                            .collection("city").document(city)
+                            .collection("area").document(area)
                             .update("attack",spn_pest.getSelectedItem().toString()).addOnCompleteListener(task -> {
                         if(task.isSuccessful()){
                             Toast.makeText(PestAttack.this, "Pest Attack Added", Toast.LENGTH_SHORT).show();

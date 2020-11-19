@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -22,6 +23,7 @@ public class MyField extends AppCompatActivity {
     private TextView txt_crop,txt_attack;
     private FirebaseAuth mAuth;
     private String state,city,area;
+    private Button btn_crop;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -30,6 +32,7 @@ public class MyField extends AppCompatActivity {
         txt_crop = findViewById(R.id.txt_field_crop);
         firebase = FirebaseFirestore.getInstance();
         mAuth = FirebaseAuth.getInstance();
+        btn_crop = findViewById(R.id.btn_field_crop);
         Button btn_add_crop_my_field = findViewById(R.id.btn_field_crop);
         Button btn_add_pest_attack_my_field = findViewById(R.id.btn_field_attack);
         btn_add_crop_my_field.setOnClickListener(v -> startActivity(new Intent(getApplicationContext(),AddCrop.class)));
@@ -47,19 +50,17 @@ public class MyField extends AppCompatActivity {
             firebase.collection("state").document(state)
                     .collection("city").document(city)
                     .collection("area").document(area)
-                    .get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
-                @Override
-                public void onComplete(@NonNull Task<DocumentSnapshot> task) {
-                    if(task.isSuccessful()) {
-                        txt_attack.setText(Objects.requireNonNull(Objects.requireNonNull(task.getResult()).get("attack")).toString());
-                    }else{
-                        Toast.makeText(MyField.this, "Try Later!!", Toast.LENGTH_SHORT).show();
-                        mAuth.signOut();
-                        finish();
-                    }
-                }
-            });
+                    .get().addOnCompleteListener(task1 -> {
+                        if(task1.isSuccessful()) {
+                            txt_attack.setText(Objects.requireNonNull(Objects.requireNonNull(task1.getResult()).get("attack")).toString());
+                        }else{
+                            Toast.makeText(MyField.this, "Try Later!!", Toast.LENGTH_SHORT).show();
+                            mAuth.signOut();
+                            finish();
+                        }
+                    });
         });
+        btn_crop.setOnClickListener(v -> startActivity(new Intent(getApplicationContext(),AddCrop.class)));
 
     }
 

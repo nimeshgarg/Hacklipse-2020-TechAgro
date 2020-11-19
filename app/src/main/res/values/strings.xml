@@ -1,8 +1,8 @@
 <resources>
     <string name="app_name">TechAgro</string>
-    <string name="password">PASSWORD</string>
+    <string name="password">Password</string>
     <string name="login">LOGIN</string>
-    <string name="email">EMAIL</string>
+    <string name="email">Email</string>
     <string name="my_profile">My Profile</string>
     <string name="area_info">Info Of My Area</string>
     <string name="my_field">My Field</string>

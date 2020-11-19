@@ -10,4 +10,8 @@
     <string name="sign_out">Sign Out</string>
     <string name="name">Name</string>
     <string name="registration">REGISTER</string>
+    <string name="area">Area</string>
+    <string name="state">State</string>
+    <string name="city">City</string>
+    <string name="crop">Crop</string>
 </resources>

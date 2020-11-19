@@ -29,7 +29,6 @@ public class MyField extends AppCompatActivity {
         mAuth = FirebaseAuth.getInstance();
         Button btn_crop = findViewById(R.id.btn_field_crop);
         Button btn_pest = findViewById(R.id.btn_field_attack);
-        btn_pest.setOnClickListener(v -> startActivity(new Intent(getApplicationContext(),PestAttack.class)));
         firebase.collection("user").document(Objects.requireNonNull(Objects.requireNonNull(mAuth.getCurrentUser()).getEmail())).get().addOnCompleteListener(task -> {
             if(!task.isSuccessful()){
                 Toast.makeText(MyField.this, "Try Later!!", Toast.LENGTH_SHORT).show();
@@ -54,7 +53,7 @@ public class MyField extends AppCompatActivity {
                     });
         });
         btn_crop.setOnClickListener(v -> startActivity(new Intent(getApplicationContext(),AddCrop.class)));
-
+        btn_pest.setOnClickListener(v -> startActivity(new Intent(getApplicationContext(),PestAttack.class)));
     }
 
     @Override

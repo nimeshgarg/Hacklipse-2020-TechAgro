@@ -16,4 +16,6 @@
     <string name="crop">Crop</string>
     <string name="add_pest_attack">ADD PEST ATTACK</string>
     <string name="change_crop">CHANGE CROP</string>
+    <string name="current_crop">Current Crop</string>
+    <string name="current_attack">Current Attack</string>
 </resources>

@@ -7,4 +7,30 @@
     android:background="@drawable/agricultural_gypsum_salt_lake_city_ut"
     tools:context=".PestAttack">
 
+    <TextView
+        android:id="@+id/txt_add_pest_attack"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="serif-monospace"
+        android:text="ADD PEST ATTACK"
+        android:textColor="@color/black"
+        android:textSize="36sp"
+        android:textStyle="normal|bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.141" />
+
+    <Spinner
+        android:id="@+id/spn_pest_attack"
+        android:layout_width="408dp"
+        android:layout_height="34dp"
+        android:background="#CDDC39"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.333"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.324" />
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -19,8 +19,6 @@ public class Login extends AppCompatActivity {
     private EditText pass, email;
     private ProgressBar bar;
     private FirebaseAuth mAuth;
-    private TextView forgotpassword;
-
     @Override
     public void onBackPressed() {
         finishAffinity();
@@ -34,7 +32,6 @@ public class Login extends AppCompatActivity {
         email = findViewById(R.id.email_login);
         pass = findViewById(R.id.pass_login);
         bar = findViewById(R.id.bar_login);
-        forgotpassword = findViewById(R.id.txt_forgot);
         mAuth = FirebaseAuth.getInstance();
         if(mAuth.getCurrentUser()!=null){
             startActivity(new Intent(getApplicationContext(), MainPage.class));
@@ -59,12 +56,6 @@ public class Login extends AppCompatActivity {
                 pass.setText("");
                 bar.setVisibility(View.INVISIBLE);
             }
-            /*forgotpassword.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    startActivity(new Intent());
-                }*/
-            });
         });
 
     }
@@ -74,5 +65,5 @@ public class Login extends AppCompatActivity {
     public void register (View v){
         startActivity(new Intent(getApplicationContext(),Register.class));
     }
-
+//password_reset
 }

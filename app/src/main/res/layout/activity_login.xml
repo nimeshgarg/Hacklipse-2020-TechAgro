@@ -14,14 +14,14 @@
         android:layout_height="wrap_content"
         android:clickable="true"
         android:focusable="true"
-        android:onClick="register"
+        android:onClick="password_reset"
         android:text="@string/forgot_password"
         android:textColor="#673AB7"
         app:layout_constraintBottom_toTopOf="@+id/btn_login"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/pass_login"
-        app:layout_constraintVertical_bias="0.404" />
+        app:layout_constraintTop_toBottomOf="@+id/new_login"
+        app:layout_constraintVertical_bias="0.2" />
 
     <Button
         android:id="@+id/btn_login"

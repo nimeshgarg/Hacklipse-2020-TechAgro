@@ -14,6 +14,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.QueryDocumentSnapshot;
+import com.google.firebase.messaging.FirebaseMessaging;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -27,6 +28,7 @@ public class PestAttack extends AppCompatActivity {
         private ArrayAdapter<String> adapter_pest;
         private ProgressBar bar;
         private String state,city,area;
+        private FirebaseMessaging msg;
         @Override
         protected void onCreate(Bundle savedInstanceState) {
             super.onCreate(savedInstanceState);
@@ -36,6 +38,7 @@ public class PestAttack extends AppCompatActivity {
             mAuth = FirebaseAuth.getInstance();
             firebase = FirebaseFirestore.getInstance();
             bar = findViewById(R.id.bar_pest);
+            msg = FirebaseMessaging.getInstance();
             firebase.collection("user").document(Objects.requireNonNull(Objects.requireNonNull(mAuth.getCurrentUser()).getEmail())).get()
                     .addOnCompleteListener(task -> {
                         if(!task.isSuccessful()){
@@ -91,6 +94,7 @@ public class PestAttack extends AppCompatActivity {
                     btn_submit.setEnabled(true);
                     btn_submit.setVisibility(View.VISIBLE);
                 }
+                
             });
         }
 }

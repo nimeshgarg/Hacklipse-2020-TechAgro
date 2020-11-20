@@ -17,6 +17,8 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 
+import java.util.Objects;
+
 public class MyProfile extends AppCompatActivity {
     private FirebaseAuth mAuth;
     private TextView txt_name,txt_email,txt_area,txt_crop,txt_state,txt_city;
@@ -40,18 +42,18 @@ public class MyProfile extends AppCompatActivity {
             startActivity(new Intent(getApplicationContext(),Login.class));
         });
         bar.setVisibility(View.VISIBLE);
-        firebase.collection("user").document(mAuth.getCurrentUser().getEmail()).get()
+        firebase.collection("user").document(Objects.requireNonNull(Objects.requireNonNull(mAuth.getCurrentUser()).getEmail())).get()
                 .addOnCompleteListener(task -> {
                     if(!task.isSuccessful()){
                         Toast.makeText(MyProfile.this, "Try Again Later!!", Toast.LENGTH_SHORT).show();
                         mAuth.signOut();
                         finish();
                     }
-                    txt_state.setText(task.getResult().get("state").toString());
-                    txt_city.setText(task.getResult().get("city").toString());
-                    txt_area.setText(task.getResult().get("area").toString());
-                    txt_crop.setText(task.getResult().get("crop").toString());
-                    txt_name.setText(task.getResult().get("name").toString());
+                    txt_state.setText(Objects.requireNonNull(Objects.requireNonNull(task.getResult()).get("state")).toString());
+                    txt_city.setText(Objects.requireNonNull(task.getResult().get("city")).toString());
+                    txt_area.setText(Objects.requireNonNull(task.getResult().get("area")).toString());
+                    txt_crop.setText(Objects.requireNonNull(task.getResult().get("crop")).toString());
+                    txt_name.setText(Objects.requireNonNull(task.getResult().get("name")).toString());
                     txt_email.setText(mAuth.getCurrentUser().getEmail());
                     bar.setVisibility(View.INVISIBLE);
                 });

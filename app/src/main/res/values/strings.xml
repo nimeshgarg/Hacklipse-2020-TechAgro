@@ -21,4 +21,5 @@
     <string name="price_of_my_crop">Price Of My Crop</string>
     <string name="my_crop_in_my_area">My Crop In My Area</string>
     <string name="check">CHECK</string>
+    <string name="forgot_password">Forgot Password?</string>
 </resources>

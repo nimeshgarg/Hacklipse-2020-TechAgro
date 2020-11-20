@@ -19,6 +19,7 @@ public class Login extends AppCompatActivity {
     private EditText pass, email;
     private ProgressBar bar;
     private FirebaseAuth mAuth;
+    private TextView forgotpassword;
 
     @Override
     public void onBackPressed() {
@@ -33,6 +34,7 @@ public class Login extends AppCompatActivity {
         email = findViewById(R.id.email_login);
         pass = findViewById(R.id.pass_login);
         bar = findViewById(R.id.bar_login);
+        forgotpassword = findViewById(R.id.txt_forgot);
         mAuth = FirebaseAuth.getInstance();
         if(mAuth.getCurrentUser()!=null){
             startActivity(new Intent(getApplicationContext(), MainPage.class));
@@ -57,12 +59,20 @@ public class Login extends AppCompatActivity {
                 pass.setText("");
                 bar.setVisibility(View.INVISIBLE);
             }
+            /*forgotpassword.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    startActivity(new Intent());
+                }*/
+            });
         });
+
     }
-    boolean isEmailValid(CharSequence email) {
+        boolean isEmailValid(CharSequence email) {
         return android.util.Patterns.EMAIL_ADDRESS.matcher(email).matches();
     }
     public void register (View v){
         startActivity(new Intent(getApplicationContext(),Register.class));
     }
+
 }

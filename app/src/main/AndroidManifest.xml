@@ -9,7 +9,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.TechArgo">
-        <activity android:name=".AreaInfo"></activity>
+        <activity android:name=".ResetPassword"></activity>
+        <activity android:name=".AreaInfo" />
         <activity android:name=".PestAttack" />
         <activity android:name=".AddCrop" />
         <activity android:name=".Register" />
@@ -24,8 +25,6 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
     </application>
-
 
 </manifest>

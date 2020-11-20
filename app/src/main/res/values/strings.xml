@@ -22,4 +22,6 @@
     <string name="my_crop_in_my_area">My Crop In My Area</string>
     <string name="check">CHECK</string>
     <string name="forgot_password">Forgot Password?</string>
+    <string name="enter_your_email">Enter Your Email</string>
+    <string name="send_email">Send Email</string>
 </resources>

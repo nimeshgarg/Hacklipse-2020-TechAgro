@@ -17,6 +17,7 @@ import com.google.firebase.analytics.FirebaseAnalytics;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.QueryDocumentSnapshot;
+import com.google.firebase.firestore.Source;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -200,11 +201,34 @@ public class Register extends AppCompatActivity {
                                                         data.put("city",spn_city.getSelectedItem().toString());
                                                         data.put("area",spn_area.getSelectedItem().toString());
                                                         data.put("crop",spn_crop.getSelectedItem().toString());
+
                                                         firebase.collection("user").document(txt_email.getText().toString()).set(data)
                                                                 .addOnCompleteListener(task12 -> {
                                                                     if(task12.isSuccessful()){
-                                                                        Toast.makeText(Register.this, "Registration Complete", Toast.LENGTH_SHORT).show();
-                                                                        startActivity(new Intent(getApplicationContext(),MainPage.class));
+                                                                        firebase.collection("state").document(spn_state.getSelectedItem().toString())
+                                                                                .collection("city").document(spn_city.getSelectedItem().toString())
+                                                                                .collection("area").document(spn_area.getSelectedItem().toString())
+                                                                                .collection("crop").document(spn_crop.getSelectedItem().toString()).get(Source.SERVER).addOnCompleteListener(task123 -> {
+                                                                            if (task123.isSuccessful()) {
+                                                                                Long number = (Long) Objects.requireNonNull(task123.getResult()).get("farmers");
+                                                                                number++;
+                                                                                firebase.collection("state").document(spn_state.getSelectedItem().toString())
+                                                                                        .collection("city").document(spn_city.getSelectedItem().toString())
+                                                                                        .collection("area").document(spn_area.getSelectedItem().toString())
+                                                                                        .collection("crop").document(spn_crop.getSelectedItem().toString()).update("farmers", number).addOnCompleteListener(task1234 -> {
+                                                                                    if (task1234.isSuccessful()) {
+                                                                                        Toast.makeText(Register.this, "Registration Complete", Toast.LENGTH_SHORT).show();
+                                                                                        startActivity(new Intent(getApplicationContext(),MainPage.class));
+                                                                                    } else {
+                                                                                        Toast.makeText(Register.this, "Some Error Occurred!!", Toast.LENGTH_SHORT).show();
+                                                                                        finish();
+                                                                                    }
+                                                                                });
+                                                                            } else {
+                                                                                Toast.makeText(Register.this, "Some Error Occurred!!", Toast.LENGTH_SHORT).show();
+                                                                                finish();
+                                                                            }
+                                                                        });
                                                                     }else{
                                                                         Toast.makeText(Register.this, "Some Error Occurred!!", Toast.LENGTH_SHORT).show();
                                                                         mAuth.signOut();

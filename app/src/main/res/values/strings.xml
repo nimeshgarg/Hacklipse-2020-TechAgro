@@ -26,4 +26,5 @@
     <string name="no_of_farmers">No. of Farmers:-</string>
     <string name="find_crop_details">Find Crop Details</string>
     <string name="price_offered_by_government">Price Offered By Government</string>
+    <string name="press_check">Press Check</string>
 </resources>

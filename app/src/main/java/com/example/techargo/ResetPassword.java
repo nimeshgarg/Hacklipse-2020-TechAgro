@@ -1,26 +1,24 @@
 package com.example.techargo;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.TextView;
+import android.widget.ProgressBar;
 import android.widget.Toast;
 
-import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.android.gms.tasks.Task;
+import androidx.appcompat.app.AppCompatActivity;
+
 import com.google.firebase.auth.FirebaseAuth;
+
+import java.util.Objects;
 
 public class ResetPassword extends AppCompatActivity {
     private EditText userEmail;
-    private Button sendemail;
     private FirebaseAuth mAuth;
+    private ProgressBar bar;
 
 
     @Override
@@ -28,33 +26,40 @@ public class ResetPassword extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_reset_password);
         userEmail = findViewById(R.id.email_field);
-        sendemail = findViewById(R.id.send_email);
+        Button sendmail = findViewById(R.id.send_email);
+        bar = findViewById(R.id.bar_reset);
         mAuth = FirebaseAuth.getInstance();
-        sendemail.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                String email = userEmail.getText().toString();
-                if(TextUtils.isEmpty(email)){
-                    Toast.makeText(ResetPassword.this,"Please enter valid email",Toast.LENGTH_SHORT).show();
-                }
-                else{
-                    mAuth.sendPasswordResetEmail(email).addOnCompleteListener(new OnCompleteListener<Void>() {
-                        @Override
-                        public void onComplete(@NonNull Task<Void> task) {
-                            if(task.isSuccessful()){
-                                Toast.makeText(ResetPassword.this,"Please visit your inbox to reset the password",Toast.LENGTH_SHORT).show();
-                                /*public void login (View v){
-                                    startActivity(new Intent(getApplicationContext(),Login.class));
-                                }*/
-                            }
-                            else{
-                                String message = task.getException().getMessage();
-                                Toast.makeText(ResetPassword.this,"Error:"+message,Toast.LENGTH_SHORT).show();
-                            }
+        sendmail.setOnClickListener(v -> {
+            bar.setVisibility(View.VISIBLE);
+            sendmail.setEnabled(false);
+            String email = userEmail.getText().toString();
+            if(TextUtils.isEmpty(email)){
+                Toast.makeText(ResetPassword.this,"Please enter valid email",Toast.LENGTH_SHORT).show();
+                bar.setVisibility(View.INVISIBLE);
+                sendmail.setEnabled(true);
+            }
+            else{
+                if(isEmailValid(email)) {
+                    mAuth.sendPasswordResetEmail(email).addOnCompleteListener(task -> {
+                        if (task.isSuccessful()) {
+                            Toast.makeText(ResetPassword.this, "Mail Successfully Sent!!", Toast.LENGTH_SHORT).show();
+                            startActivity(new Intent(getApplicationContext(), Login.class));
+                        } else {
+                            String message = Objects.requireNonNull(task.getException()).getMessage();
+                            Toast.makeText(ResetPassword.this, "Error:" + message, Toast.LENGTH_SHORT).show();
+                            bar.setVisibility(View.INVISIBLE);
+                            sendmail.setEnabled(true);
                         }
                     });
+                }else{
+                    Toast.makeText(this, "Enter A Valid Email!!", Toast.LENGTH_SHORT).show();
+                    bar.setVisibility(View.INVISIBLE);
+                    sendmail.setEnabled(true);
                 }
             }
         });
+    }
+    boolean isEmailValid(CharSequence email) {
+        return android.util.Patterns.EMAIL_ADDRESS.matcher(email).matches();
     }
 }

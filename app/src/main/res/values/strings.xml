@@ -18,10 +18,12 @@
     <string name="change_crop">CHANGE CROP</string>
     <string name="submit">submit</string>
     <string name="info_of_my_area">INFO OF MY AREA</string>
-    <string name="price_of_my_crop">Price Of My Crop</string>
-    <string name="my_crop_in_my_area">My Crop In My Area</string>
+    <string name="my_crop_in_my_area">Crop Info</string>
     <string name="check">CHECK</string>
     <string name="forgot_password">Forgot Password?</string>
     <string name="enter_your_email">Enter Your Email</string>
     <string name="send_email">Send Email</string>
+    <string name="no_of_farmers">No. of Farmers:-</string>
+    <string name="find_crop_details">Find Crop Details</string>
+    <string name="price_offered_by_government">Price Offered By Government</string>
 </resources>

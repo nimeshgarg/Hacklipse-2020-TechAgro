@@ -1,3 +1,32 @@
 <resources>
-    <string name="app_name">TechArgo</string>
+    <string name="app_name">TechAgro</string>
+    <string name="password">Password</string>
+    <string name="login">LOGIN</string>
+    <string name="email">Email</string>
+    <string name="my_profile">My Profile</string>
+    <string name="area_info">Info Of My Area</string>
+    <string name="my_field">My Field</string>
+    <string name="new_login">New User? Register Now</string>
+    <string name="sign_out">Sign Out</string>
+    <string name="name">Name</string>
+    <string name="registration">REGISTER</string>
+    <string name="area">Area</string>
+    <string name="state">State</string>
+    <string name="city">City</string>
+    <string name="crop">Crop</string>
+    <string name="add_pest_attack">ADD PEST ATTACK</string>
+    <string name="change_crop">CHANGE CROP</string>
+    <string name="submit">submit</string>
+    <string name="info_of_my_area">INFO OF MY AREA</string>
+    <string name="my_crop_in_my_area">Crop Info</string>
+    <string name="check">CHECK</string>
+    <string name="forgot_password">Forgot Password?</string>
+    <string name="enter_your_email">Enter Your Email</string>
+    <string name="send_email">Send Email</string>
+    <string name="no_of_farmers">No. of Farmers:-</string>
+    <string name="find_crop_details">Find Crop Details</string>
+    <string name="price_offered_by_government">Price Offered By Government</string>
+    <string name="press_check">Press Check</string>
+    <string name="add_yield">Add Yield</string>
+    <string name="quintal_produced">Quintal Produced</string>
 </resources>
